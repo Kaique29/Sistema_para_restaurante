@@ -3,11 +3,6 @@ import { RepositorioPedidos } from "../repositorio/RepositorioPedidos";
 import { ItemPedido, Pedido } from "./Pedido";
 
 // BUILDER
-//
-// Monta o pedido aos poucos, um passo de cada vez. Só coloca o que precisa:
-// cupom, observação e agendamento são opcionais.
-// Cada passo devolve "this" (o próprio builder), por isso dá para
-// encadear os passos um depois do outro.
 export class PedidoBuilder {
   private itens: ItemPedido[] = [];
   private endereco: string = "";

@@ -1,4 +1,4 @@
-import { CardapioFabrica, CardapioItalianoFabrica, CardapioJaponesFabrica, CardapioHamburgueriaFabrica } from "./cardapio/cardapioFabrica";
+import { CardapioFabrica, CardapioItalianoFabrica, CardapioJaponesFabrica, CardapioHamburgueriaFabrica } from "./cardapio/Cardapiofabrica";
 import { PixFactory, CartaoFactory, DinheiroFactory } from "./pagamentos/pagamentosFabrica";
 import { Pedido } from "./pedidos/Pedido";
 import { PedidoBuilder } from "./pedidos/PedidoBuilder";
@@ -64,9 +64,7 @@ const pedido3 = comecarPedido(new CardapioHamburgueriaFabrica())
   .construir();
 repositorio.salvar(pedido3);
 
-// Prototype: o cliente quer repetir o pedido 1.
-// Clono e mudo só o necessário número novo, o cupom (que já foi usado)
-// e o pagamento que agora é calculado de novo sem o desconto.
+// Prototypeo.
 const repetido = pedido1.clonar();
 repetido.id = repositorio.listar().length + 1;
 repetido.cupom = "";
